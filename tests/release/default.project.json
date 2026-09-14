@@ -1,0 +1,25 @@
+{
+  "name": "PrefsReleaseSmoke",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Packages": {
+        "$className": "Folder",
+        "Prefs": { "$path": "../../dist/Prefs.rbxm" },
+        "Preferences": { "$path": "../../examples/Basic/Preferences.luau" }
+      }
+    },
+    "ServerScriptService": {
+      "PreferencesServer": { "$path": "../../examples/Basic/Server.server.luau" },
+      "Verify": { "$path": "Verify.server.luau" },
+      "RuntimeSpec": { "$path": "../runtime.spec.luau" }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "PreferencesClient": { "$path": "../../examples/Basic/Client.client.luau" },
+        "Verify": { "$path": "Verify.client.luau" }
+      }
+    }
+  }
+}

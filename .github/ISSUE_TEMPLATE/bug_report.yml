@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem in Prefs.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Prefs version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Installation method
+      options:
+        - Creator Store
+        - GitHub .rbxm release
+        - Wally
+        - Source
+    validations:
+      required: true
+  - type: dropdown
+    id: context
+    attributes:
+      label: Context
+      options:
+        - Roblox Studio
+        - Server
+        - Client
+        - Client and server
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: List the smallest sequence that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Minimal code or logs
+      render: lua
+  - type: markdown
+    attributes:
+      value: Do not include credentials, private player data, or other sensitive information. Report security vulnerabilities through SECURITY.md.

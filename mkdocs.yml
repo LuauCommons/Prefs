@@ -1,0 +1,72 @@
+site_name: Prefs
+site_description: A small, framework independent Luau preferences layer for Roblox.
+site_url: https://luaucommons.github.io/Prefs/
+repo_name: LuauCommons/Prefs
+repo_url: https://github.com/LuauCommons/Prefs
+edit_uri: edit/main/docs/
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  logo: assets/PrefsLogo(NoBackground).png
+  favicon: assets/PrefsLogo(NoBackground).png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: slate
+      primary: black
+      accent: light blue
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist
+  - tables
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: getting-started/installation.md
+      - Quick start: getting-started/quick-start.md
+      - First preference: getting-started/first-preference.md
+  - Guides:
+      - Client and server: guides/client-and-server.md
+      - Validation: guides/validation.md
+      - Reconciliation: guides/reconciliation.md
+      - Observe: guides/observe.md
+      - Persistence: guides/persistence.md
+      - ProfileStore: guides/profilestore.md
+      - Namespaces: guides/namespaces.md
+      - Security: guides/security.md
+  - API reference:
+      - Define: api/define.md
+      - Schema types: api/schema-types.md
+      - Get and Set: api/get-set.md
+      - Toggle and reset: api/toggle-reset.md
+      - Attach and detach: api/attach-detach.md
+      - Observe: api/observe.md
+      - Serialize and Load: api/serialize-load.md
+      - Destroy: api/destroy.md
+  - Examples:
+      - Common usage: examples/common-usage.md

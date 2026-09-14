@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Luau
+        shell: bash
+        run: |
+          curl -L --fail --retry 3 https://github.com/luau-lang/luau/releases/latest/download/luau-ubuntu.zip -o /tmp/luau.zip
+          unzip -q /tmp/luau.zip -d /tmp/luau
+          chmod +x /tmp/luau/luau
+      - name: Run Luau tests
+        run: /tmp/luau/luau tests/run.luau
+      - name: Check Luau syntax
+        shell: bash
+        run: |
+          find src tests examples -name '*.luau' -print0 | xargs -0 -n1 /tmp/luau/luau-compile --only-parse
+      - name: Install Rojo 7.7.0
+        shell: bash
+        run: |
+          curl -L --fail --retry 3 https://github.com/rojo-rbx/rojo/releases/download/v7.7.0/rojo-7.7.0-linux-x86_64.zip -o /tmp/rojo.zip
+          unzip -q /tmp/rojo.zip -d /tmp/rojo
+          chmod +x /tmp/rojo/rojo
+          echo "/tmp/rojo" >> "$GITHUB_PATH"
+      - name: Verify production build
+        shell: bash
+        run: |
+          rojo build default.project.json -o /tmp/Prefs.rbxmx
+          test -s /tmp/Prefs.rbxmx
+          ! grep -Eq 'tests|examples|scripts|dist' /tmp/Prefs.rbxmx
+      - name: Check documentation source
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build MkDocs
+        run: |
+          python -m pip install --disable-pip-version-check mkdocs-material
+          mkdocs build --strict

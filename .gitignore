@@ -1,0 +1,12 @@
+*.rbxm
+*.rbxlx
+*.rbxl
+selene.toml
+.DS_Store
+dist/
+.tools/
+site/
+__pycache__/
+.venv/
+venv/
+.mkdocs-cache/

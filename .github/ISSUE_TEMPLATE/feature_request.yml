@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest a focused improvement to Prefs.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Why the current API is not enough
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example API (optional)
+      render: lua

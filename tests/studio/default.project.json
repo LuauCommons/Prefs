@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/rojo-rbx/rojo/master/schema.json",
+  "name": "PrefsStudioFixture",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Packages": {
+        "$className": "Folder",
+        "Prefs": { "$path": "../../src" },
+        "Preferences": { "$path": "Preferences.luau" },
+        "SecondaryPreferences": { "$path": "SecondaryPreferences.luau" }
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "PrefsFixture.server": { "$path": "server/PrefsFixture.server.luau" }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "PrefsFixture.client": { "$path": "client/PrefsFixture.client.luau" }
+      }
+    }
+  }
+}

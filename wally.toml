@@ -1,0 +1,13 @@
+[package]
+name = "luaucommons/prefs"
+version = "0.1.0"
+description = "Server-authoritative player preferences with validation, reconciliation, and replication."
+license = "MIT"
+authors = ["LuauCommons"]
+realm = "shared"
+registry = "https://github.com/UpliftGames/wally-index"
+private = false
+include = ["src", "src/**", "default.project.json", "wally.toml", "README.md", "LICENSE"]
+exclude = ["**"]
+
+[dependencies]
